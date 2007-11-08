@@ -89,10 +89,10 @@ public class SpeedTestServer {
           }
           if (count == 5000) {
             long millis = System.currentTimeMillis() - first;
-            System.out.println(format +  " => " + millis + " millis");
+            //System.out.println(format +  " => " + millis + " millis");
             stats.get(format).add(millis);
-            if (stats.get(format).size() == 10) {
-              System.out.println(format + " : " + stats.get(format));
+            if (stats.get(format).size() >= 10) {
+              System.out.println("server : " + format + " : " + stats.get(format));
             }
           }
         }
@@ -129,13 +129,13 @@ public class SpeedTestServer {
       dais.readFully(bytes);
       Event event = new Event();
       InputStream in = new ByteArrayInputStream(bytes);
-      Document doc = db.parse(in);
-      Element root = doc.getDocumentElement();
-
-      String timestamp = root.getAttribute("timestamp");
-      event.timestamp = Long.parseLong(timestamp);
-      Element message = (Element) root.getElementsByTagName("log4j:message").item(0);
-      event.message = message.getTextContent();
+//      Document doc = db.parse(in);
+//      Element root = doc.getDocumentElement();
+//
+//      String timestamp = root.getAttribute("timestamp");
+//      event.timestamp = Long.parseLong(timestamp);
+//      Element message = (Element) root.getElementsByTagName("log4j:message").item(0);
+//      event.message = message.getTextContent();
 /*
       System.out.println("timestamp = " + timestamp);
       System.out.println("level = " + root.getAttribute("level"));
