@@ -24,12 +24,12 @@ public class SpeedTestClient {
   }
 
   public void go() throws InterruptedException {
-    for (int i=0;i<10; i++) {
+    for (int i=0;i<11; i++) {
       run(Format.Xml);
       run(Format.Object);
     }
-    System.out.println("Xml = " + stats.get(Format.Xml));
-    System.out.println("Object = " + stats.get(Format.Object));
+    System.out.println("Client: Xml = " + stats.get(Format.Xml));
+    System.out.println("Client: Object = " + stats.get(Format.Object));
     LogManager.shutdown();
   }
 
