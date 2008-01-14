@@ -11,7 +11,6 @@ public class JumpToCodeConfigurationForm {
   private JTextField hostnameField;
   private JPanel rootComponent;
   private JTextField portField;
-  private JCheckBox enabledOnStartupCheckbox;
   private JCheckBox enabledCheckBox;
 
   // Method returns the root component of the form
@@ -21,14 +20,12 @@ public class JumpToCodeConfigurationForm {
 
   public void setData(JumpToCodeApplicationComponent data) {
     portField.setText(data.getPort());
-    enabledOnStartupCheckbox.setSelected(data.isEnabledOnStartUp());
     enabledCheckBox.setSelected(data.isEnabled());
     hostnameField.setText(data.getHostName());
   }
 
   public void getData(JumpToCodeApplicationComponent data) {
     data.setPort(portField.getText());
-    data.setEnabledOnStartUp(enabledOnStartupCheckbox.isSelected());
     data.setEnabled(enabledCheckBox.isSelected());
     data.setHostName(hostnameField.getText());
   }
@@ -36,8 +33,6 @@ public class JumpToCodeConfigurationForm {
   @SuppressWarnings({"RedundantIfStatement"})
   public boolean isModified(JumpToCodeApplicationComponent data) {
     if (portField.getText() != null ? !portField.getText().equals(data.getPort()) : data.getPort() != null)
-      return true;
-    if (enabledOnStartupCheckbox.isSelected() != data.isEnabledOnStartUp())
       return true;
     if (enabledCheckBox.isSelected() != data.isEnabled())
       return true;
