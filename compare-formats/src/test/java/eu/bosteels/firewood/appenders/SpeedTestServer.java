@@ -91,7 +91,7 @@ public class SpeedTestServer {
             long millis = System.currentTimeMillis() - first;
             //System.out.println(format +  " => " + millis + " millis");
             stats.get(format).add(millis);
-            if (stats.get(format).size() >= 10) {
+            if (stats.get(format).size() == 10) {
               System.out.println("server : " + format + " : " + stats.get(format));
             }
           }
