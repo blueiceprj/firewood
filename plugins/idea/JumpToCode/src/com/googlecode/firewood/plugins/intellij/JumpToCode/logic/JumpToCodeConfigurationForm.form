@@ -11,8 +11,6 @@
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:max(d;4px):noGrow"/>
-    <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:d:grow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
@@ -58,21 +56,9 @@
           <toolTipText value="local port on which to listen"/>
         </properties>
       </component>
-      <component id="926a6" class="javax.swing.JCheckBox" binding="enabledOnStartupCheckbox">
-        <constraints>
-          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="631" height="22"/>
-          </grid>
-          <forms/>
-        </constraints>
-        <properties>
-          <text value="&amp;Auto-enabled on startup"/>
-          <toolTipText value="start listening when IDEA starts"/>
-        </properties>
-      </component>
       <component id="3e4cc" class="javax.swing.JCheckBox" binding="enabledCheckBox">
         <constraints>
-          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="631" height="22"/>
           </grid>
           <forms/>
@@ -108,7 +94,7 @@
       </component>
       <scrollpane id="39ecb">
         <constraints>
-          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties/>

@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
+import java.util.Date;
 
 /**
  */
@@ -35,8 +36,6 @@ public class JumpToCodeApplicationComponent
 
   private Server server;
 
-  private boolean enabledOnStartUp = true;
-
   private String hostName = "0.0.0.0";
 
   private int port = 4748;
@@ -46,18 +45,12 @@ public class JumpToCodeApplicationComponent
   private boolean enabled;
 
   public JumpToCodeApplicationComponent() {
+    RuntimeException e = new RuntimeException("test");
+    e.printStackTrace();
     server = new Server();
-    if (enabledOnStartUp) {
-      server.configure(this);
-    }
-  }
-
-  public boolean isEnabledOnStartUp() {
-    return enabledOnStartUp;
-  }
-
-  public void setEnabledOnStartUp(boolean enabledOnStartUp) {
-    this.enabledOnStartUp = enabledOnStartUp;
+    System.out.println("date=" + new Date() + " enabled = " + enabled);
+    server.configure(this);
+    System.out.println("server = " + server);
   }
 
   public String getHostName() {
@@ -153,5 +146,7 @@ public class JumpToCodeApplicationComponent
 
   public void loadState(JumpToCodeApplicationComponent state) {
     XmlSerializerUtil.copyBean(state, this);
+    System.out.println("JumpToCodeApplicationComponent.loadState");
+    server.configure(this);
   }
 }
