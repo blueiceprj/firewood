@@ -9,6 +9,8 @@ import com.googlecode.firewood.plugins.intellij.JumpToCode.model.Request;
 import com.googlecode.firewood.plugins.intellij.JumpToCode.model.Response;
 import com.googlecode.firewood.plugins.intellij.JumpToCode.model.SourceLocation;
 
+import java.io.IOException;
+
 /**
  */
 public class RequestHandler extends IoHandlerAdapter {
@@ -47,7 +49,9 @@ public class RequestHandler extends IoHandlerAdapter {
 
   @Override
   public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
-    logger.warn("exceptionCaught", cause);
+    if (!(cause instanceof IOException)) {
+      logger.warn("exceptionCaught", cause);
+    }
     session.close(true);
   }
 

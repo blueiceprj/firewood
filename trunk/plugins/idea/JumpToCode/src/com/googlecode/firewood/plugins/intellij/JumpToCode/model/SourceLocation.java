@@ -8,6 +8,8 @@ public class SourceLocation {
 
   private String className;
 
+  private String fileName;
+
   private int lineNumber;
 
   private String project;
@@ -20,6 +22,10 @@ public class SourceLocation {
 
   public void setClassName(String className) {
     this.className = className;
+  }
+
+  public void setFileName(String fileName) {
+    this.fileName = fileName;
   }
 
   public int getLineNumber() {
@@ -44,7 +50,19 @@ public class SourceLocation {
   }
 
   public String getFileName() {
-    return getShortClassName() + ".java";
+    if (fileName != null) {
+      return fileName;
+    }
+    // determine filename from the className
+    String shortName = getShortClassName();
+    // handle inner classes
+    // (won't work when class has one or more dollar signs in his name)  
+    int index = shortName.indexOf("$");
+    String fileName = shortName;
+    if (index != -1) {
+      fileName = shortName.substring(0, index);
+    }
+    return fileName + ".java";
   }
 
   public String getProject() {

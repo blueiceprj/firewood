@@ -18,20 +18,20 @@ public class JumpToCodeConfigurationForm {
     return rootComponent;
   }
 
-  public void setData(JumpToCodeApplicationComponent data) {
+  public void setData(Config data) {
     portField.setText(data.getPort());
     enabledCheckBox.setSelected(data.isEnabled());
     hostnameField.setText(data.getHostName());
   }
 
-  public void getData(JumpToCodeApplicationComponent data) {
+  public void getData(Config data) {
     data.setPort(portField.getText());
     data.setEnabled(enabledCheckBox.isSelected());
     data.setHostName(hostnameField.getText());
   }
 
   @SuppressWarnings({"RedundantIfStatement"})
-  public boolean isModified(JumpToCodeApplicationComponent data) {
+  public boolean isModified(Config data) {
     if (portField.getText() != null ? !portField.getText().equals(data.getPort()) : data.getPort() != null)
       return true;
     if (enabledCheckBox.isSelected() != data.isEnabled())
