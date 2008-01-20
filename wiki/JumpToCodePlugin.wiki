@@ -1,0 +1,10 @@
+#The JumpToCodePlugin for IntelliJ IDEA
+
+= Introduction =
+
+The JumpToCode plugin waits for requests from external programs to jump to a specific source location.
+
+
+= Details =
+
+More details will follow soon :-)
