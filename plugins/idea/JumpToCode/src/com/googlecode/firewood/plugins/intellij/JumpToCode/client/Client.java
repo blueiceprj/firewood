@@ -28,9 +28,10 @@ public class Client {
     ClientHandler clientHandler = new ClientHandler();
     connector.setHandler(clientHandler);
     connector.setIdleTime(IdleStatus.BOTH_IDLE, 10);
-    SocketAddress address = new InetSocketAddress("127.0.0.1",4749);
+    SocketAddress address = new InetSocketAddress("127.0.0.1",5051);
 
     IoSession session = connector.connect(address).awaitUninterruptibly().getSession();
+    session.getConfig().setUseReadOperation(true);
 
     String xml =
       "<request type=\"JumpToLocation\">\n" +
@@ -41,49 +42,82 @@ public class Client {
         "  </sourceLocation>\n" +
         "</request>";
 
-    session.write(xml);
-    session.getConfig().setUseReadOperation(true);
+    sendAndReceive(session, xml);
+    
+//    String request2 =
+//      "<request type=\"JumpToLocation\">\n" +
+//        " <id>1009</id>" +
+//        "  <sourceLocation>\n" +
+//        "    <className>org.springframework.jdbc.core.JdbcTemplate</className>\n" +
+//        "    <lineNumber>405</lineNumber>\n" +
+//        "  </sourceLocation>\n" +
+//        "</request>";
 
-    try {
-      String response = (String) session.read().awaitUninterruptibly().getMessage();
-      System.out.println("response = " + response);
-    } catch (Exception e) {
-      session.close(true);
-      System.exit(-5);
-    }
+    //sendAndReceive(session, request2);
+    //
+
+    String request3 =
+      "<request type=\"JumpToLocation\">\n" +
+        " <id>1009</id>" +
+        "  <sourceLocation>\n" +
+        "    <className>org.springframework.jdbc.core.JdbcTemplate$SimpleCallableStatementCreator</className>\n" +
+        "    <fileName>"+ "JdbcTemplate.java" + "</fileName>\n" +
+        "    <lineNumber>1</lineNumber>\n" +
+        "  </sourceLocation>\n" +
+        "</request>";
+
+    sendAndReceive(session, request3);
 
     BufferedReader userInput = new BufferedReader(new InputStreamReader( System.in ) );
     while (true) {
       System.out.println("type class:");
       String clazz = userInput.readLine();
+      System.out.println("clazz = " + clazz);
       if (clazz.equals("00")) {
         break;
       }
-      String request = createRequest(clazz);
+      String request = createRequest(clazz, null);
       session.write(request);
       ReadFuture readFuture = session.read().awaitUninterruptibly();
       if (readFuture.isRead()) {
         System.out.println("resp = \n" + readFuture.getMessage());
       }
       if (readFuture.getException() != null) {
-        readFuture.getException().printStackTrace();
+        System.out.println(readFuture.getException().getMessage());
         break;
       }
     }
   }
 
-  private static String createRequest(String clazz) {
+  private static String sendAndReceive(IoSession session, String xml) {
+    session.write(xml);
+    try {
+      String response = (String) session.read().awaitUninterruptibly().getMessage();
+      System.out.println("response = " + response);
+      return response;
+    } catch (Exception e) {
+      session.close(true);
+      System.exit(-5);
+    }
+    return "";
+  }
+
+  private static String createRequest(String clazz, String fileName) {
     Request request = new Request();
     SourceLocation sourceLocation = new SourceLocation();
     sourceLocation.setClassName(clazz);
     sourceLocation.setLineNumber(15);
     request.setType(Request.JumpToLocation);
     request.setSourceLocation(sourceLocation);
+    if (fileName != null) {
+      sourceLocation.setFileName(fileName);
+    } 
     return
         "<request type=\"JumpToLocation\">\n" +
           " <id>1008</id>" +
           "  <sourceLocation>\n" +
           "    <className>"+ clazz + "</className>\n" +
+          "    <fileName>"+ fileName + "</fileName>\n" +
           "    <lineNumber>105</lineNumber>\n" +
           "  </sourceLocation>\n" +
           "</request>";

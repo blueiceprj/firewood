@@ -6,7 +6,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.diagnostic.Logger;
+
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.util.xmlb.XmlSerializerUtil;
 import com.googlecode.firewood.plugins.intellij.JumpToCode.server.Server;
@@ -14,67 +14,32 @@ import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
-import java.util.Date;
-
-/**
- */
+import java.util.List;
+import java.util.ArrayList;
 
 @State(
-    name = JumpToCodeApplicationComponent.COMPONENT_NAME,
+    name =  "JumpToCodeApplicationComponent",
     storages = {@Storage(id = "JumpToCode", file = "$OPTIONS$/JumpToCode.xml")}
 )
-public class JumpToCodeApplicationComponent
-  implements ApplicationComponent, Configurable, ServerConfig,
-  PersistentStateComponent<JumpToCodeApplicationComponent> {
+public class JumpToCodeApplicationComponent implements ApplicationComponent, Configurable,
+ PersistentStateComponent<Config> {
 
-  public static final String COMPONENT_NAME = "JumpToCodeApplicationComponent";
+  static final Logger logger = (Logger) Logger.getInstance(JumpToCodeApplicationComponent.class);
 
-  final Logger logger = Logger.getInstance("JumpToCodeApplicationComponent");
-
-  private Server server;
-
-  private String hostName = "0.0.0.0";
-
-  private int port = 4748;
+  private Config config = new Config();
 
   private JumpToCodeConfigurationForm form;
 
-  private boolean enabled;
+  private static List<JumpToCodeApplicationComponent> instances = new ArrayList<JumpToCodeApplicationComponent>();
 
   public JumpToCodeApplicationComponent() {
-    RuntimeException e = new RuntimeException("test");
-    e.printStackTrace();
-    server = new Server();
-    System.out.println("date=" + new Date() + " enabled = " + enabled);
-    server.configure(this);
-    System.out.println("server = " + server);
-  }
-
-  public String getHostName() {
-    return hostName;
-  }
-
-  public void setHostName(String hostName) {
-    this.hostName = hostName;
-  }
-
-  public int getPortNumber() {
-    return port;
-  }
-
-  public String getPort() {
-    return String.valueOf(port);
-  }
-
-  public void setPort(String port) {
-    try {
-      this.port = Integer.parseInt(port);
-    } catch (NumberFormatException e) {
-      logger.info("user entered invalid port number: " + port);
-    }
+    logger.debug("constructed JumpToCodeApplicationComponent");
+    instances.add(this);
+    logger.debug("instances: " + instances);
   }
 
   @Nls
@@ -101,20 +66,18 @@ public class JumpToCodeApplicationComponent
   }
 
   public boolean isModified() {
-    return form != null && form.isModified(this);
+    return form != null && form.isModified(this.config);
   }
 
   public void apply() throws ConfigurationException {
     if (form != null) {
-      // Get data from form to component
-      form.getData(this);
-      server.configure(this);
+      form.getData(config);
+      Server.getInstance().configure(config);
     }
   }
   public void reset() {
     if (form != null) {
-      // Reset form data from component
-      form.setData(this);
+      form.setData(this.config);
     }
   }
   public void disposeUIResources() {
@@ -132,21 +95,20 @@ public class JumpToCodeApplicationComponent
     return "JumpToCodeApplicationComponent";
   }
 
-  public boolean isEnabled() {
-    return enabled;
+  public Config getState() {
+    return config;
   }
 
-  public void setEnabled(final boolean enabled) {
-    this.enabled = enabled;
-  }
-
-  public JumpToCodeApplicationComponent getState() {
-    return this;
-  }
-
-  public void loadState(JumpToCodeApplicationComponent state) {
-    XmlSerializerUtil.copyBean(state, this);
-    System.out.println("JumpToCodeApplicationComponent.loadState");
-    server.configure(this);
+  public void loadState(Config state) {
+    if (config.equals(state)) {
+      logger.info("loadState but nothing changed");
+    } else {
+      XmlSerializerUtil.copyBean(state, config);
+      logger.debug("loadState: enabled= " + state.isEnabled());
+      Server.getInstance().configure(config);
+    }
+//    config.hostName = state.hostName;
+//    config.port = state.port;
+//    config.enabled = state.enabled;
   }
 }

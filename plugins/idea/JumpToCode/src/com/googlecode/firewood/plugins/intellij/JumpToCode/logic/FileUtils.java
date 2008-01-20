@@ -40,7 +40,7 @@ public class FileUtils {
     for (SourceFile sourceFile : files) {
       final FileEditorManager fem = FileEditorManager.getInstance(sourceFile.project);
       final OpenFileDescriptor ofd = new OpenFileDescriptor(
-        sourceFile.project, sourceFile.virtualFile, location.getLineNumber(), 1);
+        sourceFile.project, sourceFile.virtualFile, location.getLineNumber()-1, 1);
       try {
         SwingUtilities.invokeAndWait(
         new Runnable() {

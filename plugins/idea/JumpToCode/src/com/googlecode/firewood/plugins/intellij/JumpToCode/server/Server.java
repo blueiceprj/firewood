@@ -23,11 +23,20 @@ public class Server {
 
   private SocketAcceptor acceptor;
 
+  private static Server instance = new Server();
+
+  public static Server getInstance() {
+    return instance;
+  }
+
+  private Server() {
+  }
+
   public boolean isActive() {
     return (acceptor != null && acceptor.isActive());
   }
 
-  public void configure(ServerConfig config) {
+  synchronized public void configure(ServerConfig config) {
     if (isActive()) {
       stop();
     }
@@ -47,6 +56,7 @@ public class Server {
     SocketAddress address = new InetSocketAddress(config.getHostName(), config.getPortNumber());
     try {
       acceptor.bind(address);
+      logger.debug("bound to " + address);
     } catch (IOException e) {
       logger.error("failed to bind", e);
       acceptor = null;
