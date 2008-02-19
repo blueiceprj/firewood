@@ -4,8 +4,6 @@ package com.googlecode.firewood.plugins.intellij.JumpToCode.model;
  */
 public class Request {
 
-  //private RequestType type;
-
   private String type;
 
   public static final String JumpToLocation = "JumpToLocation";
