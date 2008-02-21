@@ -12,6 +12,9 @@
     <orderEntry type="library" name="mina-core" level="project" />
     <orderEntry type="library" name="slf4j-nop" level="project" />
     <orderEntry type="library" name="slf4j-api" level="project" />
+    <orderEntry type="library" name="jetty" level="project" />
+    <orderEntry type="library" name="jetty-util" level="project" />
+    <orderEntry type="library" name="servlet-api" level="project" />
     <orderEntryProperties />
   </component>
 </module>

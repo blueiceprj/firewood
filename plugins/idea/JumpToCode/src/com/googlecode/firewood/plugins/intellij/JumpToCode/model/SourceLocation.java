@@ -16,6 +16,17 @@ public class SourceLocation {
 
   private String module;
 
+  public SourceLocation() {
+  }
+
+  public SourceLocation(String className, String fileName, int lineNumber, String project, String module) {
+    this.className = className;
+    this.fileName = fileName;
+    this.lineNumber = lineNumber;
+    this.project = project;
+    this.module = module;
+  }
+
   public String getClassName() {
     return className;
   }

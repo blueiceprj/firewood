@@ -17,19 +17,19 @@ import com.googlecode.firewood.plugins.intellij.JumpToCode.logic.ServerConfig;
 
 /**
  */
-public class Server {
+public class MinaServer {
 
   protected final Logger logger = (Logger) Logger.getInstance(this.getClass());
 
   private SocketAcceptor acceptor;
 
-  private static Server instance = new Server();
+  private static MinaServer instance = new MinaServer();
 
-  public static Server getInstance() {
+  public static MinaServer getInstance() {
     return instance;
   }
 
-  private Server() {
+  private MinaServer() {
   }
 
   public boolean isActive() {
@@ -61,6 +61,7 @@ public class Server {
       logger.error("failed to bind", e);
       acceptor = null;
     }
+    
   }
 
   private void stop() {

@@ -425,6 +425,29 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="jetty">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/jetty-6.1.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="http://jetty.mortbay.org/apidocs/" />
+      </JAVADOC>
+      <SOURCES />
+    </library>
+    <library name="jetty-util">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/jetty-util-6.1.7.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="servlet-api">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/servlet-api-2.5-6.1.7.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
 </project>
 
