@@ -9,7 +9,8 @@ import com.intellij.openapi.options.ConfigurationException;
 
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.util.xmlb.XmlSerializerUtil;
-import com.googlecode.firewood.plugins.intellij.JumpToCode.server.Server;
+import com.googlecode.firewood.plugins.intellij.JumpToCode.server.MinaServer;
+import com.googlecode.firewood.plugins.intellij.JumpToCode.server.HttpServer;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -72,7 +73,8 @@ public class JumpToCodeApplicationComponent implements ApplicationComponent, Con
   public void apply() throws ConfigurationException {
     if (form != null) {
       form.getData(config);
-      Server.getInstance().configure(config);
+      //MinaServer.getInstance().configure(config);
+      HttpServer.getInstance().configure(config);
     }
   }
   public void reset() {
@@ -100,12 +102,14 @@ public class JumpToCodeApplicationComponent implements ApplicationComponent, Con
   }
 
   public void loadState(Config state) {
+    logger.info("loadState");
     if (config.equals(state)) {
       logger.info("loadState but nothing changed");
     } else {
       XmlSerializerUtil.copyBean(state, config);
       logger.debug("loadState: enabled= " + state.isEnabled());
-      Server.getInstance().configure(config);
+      //MinaServer.getInstance().configure(config);
+      HttpServer.getInstance().configure(config);
     }
 //    config.hostName = state.hostName;
 //    config.port = state.port;
