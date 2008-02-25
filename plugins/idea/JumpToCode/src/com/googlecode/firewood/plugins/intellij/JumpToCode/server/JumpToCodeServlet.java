@@ -1,4 +1,4 @@
-package com.googlecode.firewood.plugins.intellij.JumpToCode.servlet;
+package com.googlecode.firewood.plugins.intellij.JumpToCode.server;
 
 import com.googlecode.firewood.plugins.intellij.JumpToCode.model.SourceLocation;
 import com.googlecode.firewood.plugins.intellij.JumpToCode.logic.FileUtils;

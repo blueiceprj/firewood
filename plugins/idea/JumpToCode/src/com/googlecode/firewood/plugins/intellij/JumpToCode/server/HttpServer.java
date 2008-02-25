@@ -1,7 +1,7 @@
 package com.googlecode.firewood.plugins.intellij.JumpToCode.server;
 
 import com.googlecode.firewood.plugins.intellij.JumpToCode.logic.ServerConfig;
-import com.googlecode.firewood.plugins.intellij.JumpToCode.servlet.JumpToCodeServlet;
+import com.googlecode.firewood.plugins.intellij.JumpToCode.server.JumpToCodeServlet;
 import org.mortbay.jetty.servlet.Context;
 import org.mortbay.jetty.servlet.ServletHolder;
 import org.mortbay.jetty.Server;
