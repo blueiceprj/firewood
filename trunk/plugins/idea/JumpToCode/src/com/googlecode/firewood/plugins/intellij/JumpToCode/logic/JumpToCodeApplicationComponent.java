@@ -9,7 +9,6 @@ import com.intellij.openapi.options.ConfigurationException;
 
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.util.xmlb.XmlSerializerUtil;
-import com.googlecode.firewood.plugins.intellij.JumpToCode.server.MinaServer;
 import com.googlecode.firewood.plugins.intellij.JumpToCode.server.HttpServer;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
@@ -98,17 +97,18 @@ public class JumpToCodeApplicationComponent implements ApplicationComponent, Con
   }
 
   public Config getState() {
+    //System.out.println("JumpToCodeApplicationComponent.getState");
     return config;
   }
 
   public void loadState(Config state) {
+    System.out.println("JumpToCodeApplicationComponent.loadState");
     logger.info("loadState");
     if (config.equals(state)) {
       logger.info("loadState but nothing changed");
     } else {
       XmlSerializerUtil.copyBean(state, config);
       logger.debug("loadState: enabled= " + state.isEnabled());
-      //MinaServer.getInstance().configure(config);
       HttpServer.getInstance().configure(config);
     }
 //    config.hostName = state.hostName;
