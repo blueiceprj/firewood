@@ -402,29 +402,6 @@
     <option name="myLastEditedConfigurable" />
   </component>
   <component name="libraryTable">
-    <library name="mina-core">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/mina-core-2.0.0-M1-20071228.043505-111.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/mina-core-2.0.0-M1-20071228.043505-111-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="slf4j-nop">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/slf4j-nop-1.4.3.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="slf4j-api">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.4.3.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
     <library name="jetty">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/jetty-6.1.7.jar!/" />
