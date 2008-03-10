@@ -111,8 +111,5 @@ public class JumpToCodeApplicationComponent implements ApplicationComponent, Con
       logger.debug("loadState: enabled= " + state.isEnabled());
       HttpServer.getInstance().configure(config);
     }
-//    config.hostName = state.hostName;
-//    config.port = state.port;
-//    config.enabled = state.enabled;
   }
 }
