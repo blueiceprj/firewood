@@ -6,89 +6,73 @@ import com.intellij.openapi.util.text.StringUtil;
  */
 public class SourceLocation {
 
-  private String className;
+  private String packageName;
 
   private String fileName;
 
   private int lineNumber;
 
+  /** in which project to search (not yet used) */
   private String project;
 
+  /** in which module to search (not yet used) */  
   private String module;
 
   public SourceLocation() {
   }
 
-  public SourceLocation(String className, String fileName, int lineNumber, String project, String module) {
-    this.className = className;
+  public SourceLocation(String packageName, String fileName, int lineNumber, String project, String module) {
+    this.packageName = packageName;
     this.fileName = fileName;
     this.lineNumber = lineNumber;
     this.project = project;
     this.module = module;
   }
 
-  public String getClassName() {
-    return className;
-  }
-
-  public void setClassName(String className) {
-    this.className = className;
-  }
-
-  public void setFileName(String fileName) {
-    this.fileName = fileName;
+  /**
+   * construct a SourceLocation from a fully qualified class name (not yet used)
+   * @param fullyQualifiedClassName
+   */
+  public SourceLocation(String fullyQualifiedClassName) {
+    this.packageName = StringUtil.getPackageName(fullyQualifiedClassName);
+    // determine filename from the className
+    String shortName = StringUtil.getShortName(fullyQualifiedClassName);
+    // handle inner classes
+    // (won't work when class has one or more dollar signs in his name)
+    int index = shortName.indexOf("$");
+    if (index != -1) {
+      this.fileName = shortName.substring(0, index) + ".java";
+    } else {
+      this.fileName = fileName + ".java";
+    }
+    this.lineNumber = -1;
+    this.project = "";
+    this.module = "";    
   }
 
   public int getLineNumber() {
     return lineNumber;
   }
 
-  public void setLineNumber(int lineNumber) {
-    this.lineNumber = lineNumber;
-  }
-
   public String getPackageName() {
-    return StringUtil.getPackageName(className);
+    return packageName;
   }
 
   @Override
   public String toString() {
-    return className + ":" + lineNumber;
-  }
-
-  public String getShortClassName() {
-    return StringUtil.getShortName(className);
+    return packageName + "(" + fileName + ":" + lineNumber + "}";
   }
 
   public String getFileName() {
-    if (fileName != null) {
-      return fileName;
-    }
-    // determine filename from the className
-    String shortName = getShortClassName();
-    // handle inner classes
-    // (won't work when class has one or more dollar signs in his name)  
-    int index = shortName.indexOf("$");
-    String fileName = shortName;
-    if (index != -1) {
-      fileName = shortName.substring(0, index);
-    }
-    return fileName + ".java";
+    return fileName;
   }
 
   public String getProject() {
     return project;
   }
 
-  public void setProject(String project) {
-    this.project = project;
-  }
-
   public String getModule() {
     return module;
   }
 
-  public void setModule(String module) {
-    this.module = module;
-  }
 }
