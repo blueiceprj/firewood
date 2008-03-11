@@ -16,14 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/JumpToCodeApplicationComponent.java" afterPath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/JumpToCodeApplicationComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/JumpToCodeServlet.java" afterPath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/JumpToCodeServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/model/SourceLocation.java" afterPath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/model/SourceLocation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/form.html" afterPath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JumpToCode.iws" afterPath="$PROJECT_DIR$/JumpToCode.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/HttpServer.java" afterPath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/HttpServer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/FileCopyUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/FileUtils.java" afterPath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/FileUtils.java" />
     </list>
     <ignored path="my-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,7 +84,7 @@
       <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="13" selection-start="89" selection-end="89" vertical-scroll-proportion="0.063432835">
+            <state line="4" column="13" selection-start="89" selection-end="89" vertical-scroll-proportion="0.062043797">
               <folding />
             </state>
           </provider>
@@ -98,7 +93,18 @@
       <file leaf-file-name="FileUtils.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/FileUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="52" selection-start="3243" selection-end="3243" vertical-scroll-proportion="0.76865673">
+            <state line="46" column="23" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.6423358">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plugin.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="14" selection-start="234" selection-end="234" vertical-scroll-proportion="0.26877472">
               <folding />
             </state>
           </provider>
@@ -116,7 +122,7 @@
       <file leaf-file-name="TestClassnames.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/client/TestClassnames.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="0.2835821">
+            <state line="20" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="0.062043797">
               <folding />
             </state>
           </provider>
@@ -125,18 +131,16 @@
       <file leaf-file-name="HttpServer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/HttpServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.38059703">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="42" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.48540145">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JumpToCodeServlet.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="JumpToCodeServlet.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/JumpToCodeServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="478" selection-end="478" vertical-scroll-proportion="0.63432837">
+            <state line="109" column="0" selection-start="3699" selection-end="3699" vertical-scroll-proportion="1.7262774">
               <folding />
             </state>
           </provider>
@@ -148,7 +152,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="30" selection-start="264" selection-end="264" vertical-scroll-proportion="0.6306306">
+            <state line="9" column="30" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0745614">
               <folding />
             </state>
           </provider>
@@ -157,7 +161,7 @@
       <file leaf-file-name="JumpToCodeApplicationComponent.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/JumpToCodeApplicationComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="0" selection-start="3204" selection-end="3204" vertical-scroll-proportion="5.9626865">
+            <state line="113" column="0" selection-start="3204" selection-end="3204" vertical-scroll-proportion="1.6642336">
               <folding />
             </state>
           </provider>
@@ -166,10 +170,8 @@
       <file leaf-file-name="FileCopyUtils.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/FileCopyUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="77" selection-start="254" selection-end="329" vertical-scroll-proportion="0.8880597">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="12" column="22" selection-start="236" selection-end="236" vertical-scroll-proportion="0.062043797">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -393,10 +395,24 @@
     </key>
   </component>
   <component name="RunManager" selected="Plugin.JumpToCode">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="JumpToCode" />
-      <option name="VM_PARAMETERS" value=" -Xms32m -Xmx192m -XX:MaxPermSize=120m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="C:/Program Files/JetBrains/IntelliJ IDEA 6083/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
@@ -427,40 +443,10 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="C:/Program Files/JetBrains/IntelliJ IDEA 6083/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="JumpToCode" />
+      <option name="VM_PARAMETERS" value=" -Xms32m -Xmx192m -XX:MaxPermSize=120m -ea" />
       <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method>
-        <option name="Make" value="true" />
-      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
@@ -479,6 +465,22 @@
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="wholeProject" />
       </option>
+      <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
       <envs />
       <method>
         <option name="Make" value="true" />
@@ -613,11 +615,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1024" height="737" extended-state="0" />
-    <editor active="true" />
+    <frame x="-4" y="-4" width="1032" height="746" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959184" order="3" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4283305" order="8" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4269103" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16836734" order="3" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35075885" order="1" />
@@ -630,12 +632,12 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3519092" order="0" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35107473" order="0" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="12" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="13" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3642496" order="2" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36378738" order="2" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="9" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13510747" order="3" />
       <window_info id="Log4jMonitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1722973" order="14" />
@@ -653,7 +655,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="* removed MINA jars" />
+    <option name="LAST_COMMIT_MESSAGE" value="* fixed lineNumber bug (was off by one)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -670,6 +672,8 @@
     <MESSAGE value="use servlet" />
     <MESSAGE value="* embedded jetty (use HTTP instead of XML over socket)" />
     <MESSAGE value="* removed MINA jars" />
+    <MESSAGE value="* use shorter parameter names&#10;* by default use packageName + fileName&#10;* read form from file&#10;* fix portNumber bug (was off by one)&#10;* more logging" />
+    <MESSAGE value="* fixed lineNumber bug (was off by one)" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -738,69 +742,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="14" selection-start="234" selection-end="234" vertical-scroll-proportion="0.14977974">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="89" selection-end="89" vertical-scroll-proportion="0.063432835">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/client/TestClassnames.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="0.2835821">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/FileUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="52" selection-start="3243" selection-end="3243" vertical-scroll-proportion="0.76865673">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/model/SourceLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/FileCopyUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="77" selection-start="254" selection-end="329" vertical-scroll-proportion="0.8880597">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jetty-6.1.7.jar!/org/mortbay/jetty/Server.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="9" selection-start="906" selection-end="906" vertical-scroll-proportion="0.33226836">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/HttpServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.38059703">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/JumpToCodeApplicationComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="0" selection-start="3204" selection-end="3204" vertical-scroll-proportion="5.9626865">
           <folding />
         </state>
       </provider>
@@ -812,19 +756,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="89" selection-end="89" vertical-scroll-proportion="0.062043797">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/model/SourceLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="35" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/client/TestClassnames.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="0.062043797">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/HttpServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1040" selection-end="1040" vertical-scroll-proportion="0.48540145">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/form.html">
       <provider editor-type-id="HtmlPreview">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="30" selection-start="264" selection-end="264" vertical-scroll-proportion="0.6306306">
+        <state line="9" column="30" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0745614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/JumpToCodeApplicationComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="0" selection-start="3204" selection-end="3204" vertical-scroll-proportion="1.6642336">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/FileCopyUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="22" selection-start="236" selection-end="236" vertical-scroll-proportion="0.062043797">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/JumpToCodeServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="478" selection-end="478" vertical-scroll-proportion="0.63432837">
+        <state line="109" column="0" selection-start="3699" selection-end="3699" vertical-scroll-proportion="1.7262774">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/FileUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="23" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.6423358">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="14" selection-start="234" selection-end="234" vertical-scroll-proportion="0.26877472">
           <folding />
         </state>
       </provider>
