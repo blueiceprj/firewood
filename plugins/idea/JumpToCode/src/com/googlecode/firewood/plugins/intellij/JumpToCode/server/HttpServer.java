@@ -1,7 +1,6 @@
 package com.googlecode.firewood.plugins.intellij.JumpToCode.server;
 
 import com.googlecode.firewood.plugins.intellij.JumpToCode.logic.ServerConfig;
-import com.googlecode.firewood.plugins.intellij.JumpToCode.logic.FileCopyUtils;
 import org.mortbay.jetty.servlet.Context;
 import org.mortbay.jetty.servlet.ServletHolder;
 import org.mortbay.jetty.Server;
@@ -11,7 +10,7 @@ import org.apache.log4j.Logger;
  */
 public class HttpServer {
 
-  private static final Logger logger = Logger.getLogger(FileCopyUtils.class);
+  private final Logger logger = Logger.getLogger(this.getClass());
   
   private static HttpServer instance = new HttpServer();
   private Server server;
