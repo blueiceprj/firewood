@@ -2,7 +2,7 @@
 <idea-plugin>
   <name>JumpToCode</name>
   <description>allows external programs to make IDEA jump to specififed java code</description>
-  <version>0.4</version>
+  <version>0.5</version>
   <vendor>MaartenBosteels</vendor>
   <idea-version since-build="7590"/>
   <application-components>
