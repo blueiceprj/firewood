@@ -2,17 +2,19 @@
 
 = Introduction =
 
-The JumpToCode! plugin waits for requests from external programs to jump to a specific source location.
+The !JumpToCode plugin waits for requests from external programs to jump to a specific source location.
 
-The idea is that log-file viewers like Chainsaw and VigiLog interact with this plugin to make IDEA jump to a specific source location.
+The idea is that log-file viewers like Chainsaw and Vigilog interact with this plugin.
+When viewing a log-entry or stacktrace in Vigilog, users can click on a location and make IDEA jump to the corresponding location in the source code.
 
 I have already created a working patch for Vigilog, but it's not yet applied.
 Let me know when you want to try it out.
 
 =Details=
 
-The plugin features an very simple embedded HTTP server. By default it listens on port 5986.
-but that's configurable of course.
+The plugin features an very simple embedded HTTP server. 
+
+By default it listens on port 5986. But that's configurable of course.
 
 It understands only three operations:
   * jump: make IDEA jump to a specific location
@@ -42,6 +44,6 @@ http://localhost:5986/?p=java.lang&f=String.java&l=120
 
 => jump to line 120 of java.lang.String
 
-http://localhost:5986/?o=test&p=com.googlecode.firewood&f=FooBar.java&l=120
+http://localhost:5986/?o=test&p=com.googlecode.firewood&f=Foo.java&l=120
 
-=> test if file *FooBar.java* in package *com.googlecode.firewood* is known to IDEA
+=> test if file *Foo.java* in package *com.googlecode.firewood* is known to IDEA
