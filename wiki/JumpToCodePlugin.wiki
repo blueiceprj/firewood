@@ -9,7 +9,7 @@ When viewing a log-entry or stacktrace in Vigilog, users can click on a location
 
 I have already created a working patch for Vigilog, but it's not yet applied.
 
-http://code.google.com/p/firewood/source/browse/trunk/plugins/idea/JumpToCode/screenshots/vigilog-jumptocode.jpg
+http://firewood.googlecode.com/svn/trunk/plugins/idea/JumpToCode/screenshots/vigilog-jumptocode.jpg
 
 Let me know when you want to try it out.
 
