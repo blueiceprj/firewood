@@ -4,71 +4,49 @@ package com.googlecode.firewood.plugins.intellij.JumpToCode.logic;
  */
 public class Config implements ServerConfig {
   
-  private String hostName = "0.0.0.0";
-  private int port = 5986;
-  private boolean enabled = true;
+  public String hostName = "127.0.0.1";
+  public int port = 5986;
+  public boolean enabled = true;
 
-  @SuppressWarnings({"RedundantIfStatement"})
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-
-    Config config = (Config) o;
-
-    if (enabled != config.enabled) {
-      return false;
-    }
-    if (port != config.port) {
-      return false;
-    }
-    if (hostName != null ? !hostName.equals(config.hostName) : config.hostName != null) {
-      return false;
-    }
-
-    return true;
-  }
-
-  public int hashCode() {
-    int result;
-    result = (hostName != null ? hostName.hashCode() : 0);
-    result = 31 * result + port;
-    result = 31 * result + (enabled ? 1 : 0);
-    return result;
-  }
+  //public boolean firstRun = true;
 
   public String getHostName() {
+    //System.out.println("Config.getHostName");
     return hostName;
   }
 
   public int getPortNumber() {
+    //System.out.println("Config.getPortNumber");
     return port;
   }
 
   public boolean isEnabled() {
+    //System.out.println("Config.isEnabled");
     return enabled;
   }
 
   public String getPort() {
+    //System.out.println("Config.getPort");
     return String.valueOf(port);
   }
 
   public void setHostName(String hostName) {
+    //System.out.println("Config.setHostName");
     this.hostName = hostName;
   }
 
   public void setPort(String port) {
+    //System.out.println("Config.setPort");
     try {
       this.port = Integer.parseInt(port);
     } catch (NumberFormatException e) {
       JumpToCodeApplicationComponent.logger.info("user entered invalid port number: " + port);
+      // TODO: show error dialog
     }
   }
 
   public void setEnabled(boolean enabled) {
+    //System.out.println("Config.setEnabled");
     this.enabled = enabled;
   }
 }

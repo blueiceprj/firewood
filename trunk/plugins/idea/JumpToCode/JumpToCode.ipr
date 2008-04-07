@@ -409,7 +409,9 @@
       <JAVADOC>
         <root url="http://jetty.mortbay.org/apidocs/" />
       </JAVADOC>
-      <SOURCES />
+      <SOURCES>
+        <root url="file://D:/devel/tools/jetty-6.1.7/modules/jetty/src/main/java" />
+      </SOURCES>
     </library>
     <library name="jetty-util">
       <CLASSES>

@@ -2,9 +2,9 @@
 <idea-plugin>
   <name>JumpToCode</name>
   <description>allows external programs to make IDEA jump to specififed java code</description>
-  <version>0.5</version>
+  <version>0.6</version>
   <vendor>MaartenBosteels</vendor>
-  <idea-version since-build="7590"/>
+  <idea-version since-build="7364"/>
   <application-components>
     <component>
       <implementation-class>com.googlecode.firewood.plugins.intellij.JumpToCode.logic.JumpToCodeApplicationComponent</implementation-class>
