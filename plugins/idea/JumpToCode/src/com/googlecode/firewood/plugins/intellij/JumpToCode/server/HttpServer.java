@@ -47,7 +47,7 @@ public class HttpServer {
   }
 
   private void start(ServerConfig config) {
-    System.out.println("starting HttpServer");
+    logger.debug("starting HttpServer");
     server = new Server();
     Connector connector=new SocketConnector();
     connector.setPort(config.getPortNumber());
@@ -58,7 +58,7 @@ public class HttpServer {
     server.setStopAtShutdown(true);
     try {
       server.start();
-      logger.warn("started JumpToCode HTTP server at "
+      logger.info("started JumpToCode HTTP server at "
         + config.getHostName()
         + ":"
         + config.getPortNumber());

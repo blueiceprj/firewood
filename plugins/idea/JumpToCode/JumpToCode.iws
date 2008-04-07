@@ -18,8 +18,6 @@
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/Config.java" afterPath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/Config.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/JumpToCodeApplicationComponent.java" afterPath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/JumpToCodeApplicationComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JumpToCode.ipr" afterPath="$PROJECT_DIR$/JumpToCode.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/META-INF/plugin.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JumpToCode.iws" afterPath="$PROJECT_DIR$/JumpToCode.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/HttpServer.java" afterPath="$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/HttpServer.java" />
     </list>
@@ -87,7 +85,7 @@
       <file leaf-file-name="Config.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="4" selection-start="229" selection-end="229" vertical-scroll-proportion="0.5739645">
+            <state line="8" column="33" selection-start="226" selection-end="226" vertical-scroll-proportion="0.63255817">
               <folding />
             </state>
           </provider>
@@ -96,7 +94,7 @@
       <file leaf-file-name="HttpServer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/HttpServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="3" selection-start="1888" selection-end="1888" vertical-scroll-proportion="2.173913">
+            <state line="30" column="2" selection-start="761" selection-end="761" vertical-scroll-proportion="-0.6652174">
               <folding />
             </state>
           </provider>
@@ -105,7 +103,7 @@
       <file leaf-file-name="Connector.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://D:/devel/tools/jetty-6.1.7/modules/jetty/src/main/java/org/mortbay/jetty/Connector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="176" column="9" selection-start="6902" selection-end="6902" vertical-scroll-proportion="0.61538464">
+            <state line="176" column="9" selection-start="6902" selection-end="6902" vertical-scroll-proportion="0.48372093">
               <folding />
             </state>
           </provider>
@@ -114,7 +112,7 @@
       <file leaf-file-name="Server.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://D:/devel/tools/jetty-6.1.7/modules/jetty/src/main/java/org/mortbay/jetty/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="50" selection-start="3453" selection-end="3495" vertical-scroll-proportion="0.61538464">
+            <state line="84" column="50" selection-start="3453" selection-end="3495" vertical-scroll-proportion="0.48372093">
               <folding />
             </state>
           </provider>
@@ -123,7 +121,7 @@
       <file leaf-file-name="JumpToCodeApplicationComponent.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/JumpToCodeApplicationComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="1" selection-start="2138" selection-end="2138" vertical-scroll-proportion="6.236686">
+            <state line="99" column="36" selection-start="2680" selection-end="2680" vertical-scroll-proportion="0.2883721">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,37 +129,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UnnamedConfigurable.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/options/UnnamedConfigurable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1246" selection-end="1246" vertical-scroll-proportion="1.372781">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XmlSerializer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/util/xmlb/XmlSerializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="16" selection-start="1225" selection-end="1225" vertical-scroll-proportion="0.87573963">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XmlSerializerImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/util/xmlb/XmlSerializerImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="10" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.7751479">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DefaultJDOMExternalizer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/util/DefaultJDOMExternalizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="20" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.30177516">
+            <state line="50" column="20" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.2372093">
               <folding />
             </state>
           </provider>
@@ -371,14 +342,34 @@
     </navigator>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="66" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="44" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="30" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="67" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="63" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="62" />
     <property name="last_opened_file_path" value="C:\Program Files\JetBrains\IntelliJ IDEA 7.0.2\bin" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="68" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="658" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="68" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="712" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -612,17 +603,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1024" y="0" width="1024" height="746" extended-state="1" />
+    <frame x="-1024" y="0" width="1024" height="746" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959184" order="3" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6013289" order="8" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3039867" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16836734" order="3" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35075885" order="1" />
       <window_info id="Profile" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.62624586" order="3" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288364" order="10" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32724252" order="10" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" order="11" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288364" order="7" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28276575" order="1" />
@@ -634,7 +625,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="13" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52491695" order="2" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.52491695" order="2" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="9" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13510747" order="3" />
       <window_info id="Log4jMonitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1722973" order="14" />
@@ -652,7 +643,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="* use corrrect class for creating Logger instance" />
+    <option name="LAST_COMMIT_MESSAGE" value="* by default listen on 127.0.0.1 instead of 0.0.0.0&#10;* by default start listening when IDEA starts" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -672,6 +663,7 @@
     <MESSAGE value="* use shorter parameter names&#10;* by default use packageName + fileName&#10;* read form from file&#10;* fix portNumber bug (was off by one)&#10;* more logging" />
     <MESSAGE value="* fixed lineNumber bug (was off by one)" />
     <MESSAGE value="* use corrrect class for creating Logger instance" />
+    <MESSAGE value="* by default listen on 127.0.0.1 instead of 0.0.0.0&#10;* by default start listening when IDEA starts" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -738,21 +730,14 @@
     </entry>
     <entry file="file://D:/devel/tools/jetty-6.1.7/modules/jetty/src/main/java/org/mortbay/jetty/Connector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="176" column="9" selection-start="6902" selection-end="6902" vertical-scroll-proportion="0.61538464">
+        <state line="176" column="9" selection-start="6902" selection-end="6902" vertical-scroll-proportion="0.48372093">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://D:/devel/tools/jetty-6.1.7/modules/jetty/src/main/java/org/mortbay/jetty/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="50" selection-start="3453" selection-end="3495" vertical-scroll-proportion="0.61538464">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/HttpServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="3" selection-start="1888" selection-end="1888" vertical-scroll-proportion="2.173913">
+        <state line="84" column="50" selection-start="3453" selection-end="3495" vertical-scroll-proportion="0.48372093">
           <folding />
         </state>
       </provider>
@@ -771,23 +756,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/util/xmlb/XmlSerializerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="10" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.7751479">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/util/xmlb/XmlSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="16" selection-start="1225" selection-end="1225" vertical-scroll-proportion="0.87573963">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/util/DefaultJDOMExternalizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="20" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.30177516">
+        <state line="50" column="20" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.2372093">
           <folding />
         </state>
       </provider>
@@ -808,21 +779,42 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/openapi/options/UnnamedConfigurable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1246" selection-end="1246" vertical-scroll-proportion="1.372781">
+        <state line="43" column="0" selection-start="1246" selection-end="1246" vertical-scroll-proportion="1.0790697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/util/xmlb/XmlSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="16" selection-start="1225" selection-end="1225" vertical-scroll-proportion="0.6883721">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/src/src_openapi.zip!/com/intellij/util/xmlb/XmlSerializerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="10" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.60930234">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="229" selection-end="229" vertical-scroll-proportion="0.5739645">
+        <state line="8" column="33" selection-start="226" selection-end="226" vertical-scroll-proportion="0.63255817">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/server/HttpServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="2" selection-start="761" selection-end="761" vertical-scroll-proportion="-0.6652174">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/googlecode/firewood/plugins/intellij/JumpToCode/logic/JumpToCodeApplicationComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="1" selection-start="2138" selection-end="2138" vertical-scroll-proportion="6.236686">
+        <state line="99" column="36" selection-start="2680" selection-end="2680" vertical-scroll-proportion="0.2883721">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
