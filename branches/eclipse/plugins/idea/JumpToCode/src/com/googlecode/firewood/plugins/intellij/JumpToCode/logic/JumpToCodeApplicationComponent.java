@@ -1,5 +1,5 @@
 package com.googlecode.firewood.plugins.intellij.JumpToCode.logic;
-
+/*
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -23,9 +23,10 @@ import javax.swing.JComponent;
     name =  "JumpToCodeApplicationComponent",
     storages = {@Storage(id = "JumpToCode", file = "$OPTIONS$/JumpToCode.xml")}
 )
-public class JumpToCodeApplicationComponent implements ApplicationComponent, Configurable,
-  PersistentStateComponent<Config> {
-
+*/
+public class JumpToCodeApplicationComponent/* implements ApplicationComponent, Configurable,
+  PersistentStateComponent<Config> */{
+/*
   static final Logger logger = (Logger) Logger.getInstance(JumpToCodeApplicationComponent.class);
 
   private Config config = new Config();
@@ -99,5 +100,5 @@ public class JumpToCodeApplicationComponent implements ApplicationComponent, Con
     XmlSerializerUtil.copyBean(state, config);
     logger.debug("loadState: config.enabled= " + state.isEnabled());
   }
-
+*/
 }

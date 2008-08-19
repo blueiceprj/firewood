@@ -32,7 +32,7 @@ public class Config implements ServerConfig {
     try {
       this.port = Integer.parseInt(port);
     } catch (NumberFormatException e) {
-      JumpToCodeApplicationComponent.logger.info("user entered invalid port number: " + port);
+      //JumpToCodeApplicationComponent.logger.info("user entered invalid port number: " + port);
       // TODO: show error dialog
     }
   }

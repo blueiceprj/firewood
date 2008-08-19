@@ -1,7 +1,6 @@
 package com.googlecode.firewood.plugins.intellij.JumpToCode.server;
 
 import com.googlecode.firewood.plugins.intellij.JumpToCode.model.SourceLocation;
-import com.googlecode.firewood.plugins.intellij.JumpToCode.logic.FileUtils;
 import com.googlecode.firewood.plugins.intellij.JumpToCode.logic.FileCopyUtils;
 
 import javax.servlet.http.HttpServlet;
@@ -65,10 +64,11 @@ public class JumpToCodeServlet extends HttpServlet {
       }
     }
     boolean ok;
+    com.googlecode.firewood.plugins.FileUtils fileUtils = new com.googlecode.firewood.plugins.eclipse.JumpToCode.FileUtils();
     if (test) {
-      ok = FileUtils.isReachable(location);
+      ok = fileUtils.isReachable(location);
     } else {
-      ok = FileUtils.jumpToLocation(location);
+      ok = fileUtils.jumpToLocation(location);
     }
     if (ok) {
       response.setStatus(HttpServletResponse.SC_OK);

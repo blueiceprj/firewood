@@ -1,6 +1,6 @@
 package com.googlecode.firewood.plugins.intellij.JumpToCode.model;
 
-import com.intellij.openapi.util.text.StringUtil;
+//import com.intellij.openapi.util.text.StringUtil;
 
 /**
  */
@@ -34,9 +34,9 @@ public class SourceLocation {
    * @param fullyQualifiedClassName
    */
   public SourceLocation(String fullyQualifiedClassName) {
-    this.packageName = StringUtil.getPackageName(fullyQualifiedClassName);
+    this.packageName = fullyQualifiedClassName.substring(0, fullyQualifiedClassName.lastIndexOf('.'));
     // determine filename from the className
-    String shortName = StringUtil.getShortName(fullyQualifiedClassName);
+    String shortName = fullyQualifiedClassName.substring(fullyQualifiedClassName.lastIndexOf('.') + 1);
     // handle inner classes
     // (won't work when class has one or more dollar signs in his name)
     int index = shortName.indexOf("$");
@@ -60,7 +60,7 @@ public class SourceLocation {
 
   @Override
   public String toString() {
-    return packageName + "(" + fileName + ":" + lineNumber + "}";
+    return packageName + "." + fileName.substring(0, fileName.lastIndexOf('.')) + "." + fileName.substring(0, fileName.lastIndexOf('.')) + "(" + fileName + ":" + lineNumber + ")";
   }
 
   public String getFileName() {

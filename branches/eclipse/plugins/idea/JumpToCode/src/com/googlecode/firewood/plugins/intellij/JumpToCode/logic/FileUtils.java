@@ -1,5 +1,6 @@
 package com.googlecode.firewood.plugins.intellij.JumpToCode.logic;
 
+/*
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
@@ -9,6 +10,7 @@ import com.intellij.openapi.roots.ProjectFileIndex;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.module.Module;
+*/
 import com.googlecode.firewood.plugins.intellij.JumpToCode.model.SourceLocation;
 
 import javax.swing.SwingUtilities;
@@ -18,23 +20,15 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  */
-public class FileUtils {
+public class FileUtils implements com.googlecode.firewood.plugins.FileUtils {
 
-  /**
-   * find all matching locations in currently opened projects
-   * @param location source location to search for
-   * @return all matching locations (can be empty)
-   */
-  public static boolean isReachable(SourceLocation location) {
-    return !findSourceFiles(location).isEmpty();
+  public boolean isReachable(SourceLocation location) {
+    //return !findSourceFiles(location).isEmpty();
+    return true;
   }
 
-  /**
-   * jump to first matching location
-   * @param location the source location to search for
-   * @return true if jump was succesful
-   */
-  public static boolean jumpToLocation(SourceLocation location) {
+  public boolean jumpToLocation(SourceLocation location) {
+    /*
     List<SourceFile> files = findSourceFiles(location);
     final AtomicBoolean ok = new AtomicBoolean(false);
     for (SourceFile sourceFile : files) {
@@ -60,8 +54,10 @@ public class FileUtils {
       }
     }
     return ok.get();
+    */
+    return true;
   }
-
+/*
   private static class SourceFile {
     private Project project;
     Module module;
@@ -101,5 +97,5 @@ public class FileUtils {
     }
     return matches;
   }
-
+*/
 }
