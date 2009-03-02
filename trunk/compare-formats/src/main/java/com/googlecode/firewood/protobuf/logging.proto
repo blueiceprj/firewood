@@ -59,7 +59,7 @@ message Marker {
 }
 
 message LoggerContext {
-  required string name = 1;
+  optional string name = 1;
   repeated MapEntry properties = 2;
   required int64 birthTime = 3;
 
