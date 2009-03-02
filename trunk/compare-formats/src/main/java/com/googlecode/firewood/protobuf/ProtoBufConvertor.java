@@ -2,7 +2,6 @@ package com.googlecode.firewood.protobuf;
 
 import ch.qos.logback.classic.spi.*;
 import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.LoggerContext;
 
 import java.util.List;
 import java.util.Map;
@@ -12,38 +11,7 @@ import org.slf4j.Marker;
 
 /**
  */
-public class Test {
-
-  public static void main(String[] args) {
-
-    String a1 = "bnbnbnbnm";
-    Person person = new Person("Barack", "Obama", 53);
-    LoggerContext lc = new LoggerContext();
-    ch.qos.logback.classic.Logger logger = lc.getLogger(Test.class);
-    ILoggingEvent event = new LoggingEvent("com.example.foo.Bar", logger, Level.INFO, "my log message about {} and {}", null, new Object[] {a1, person});
-    System.out.println("event = " + event);
-
-    LoggingProtos.MapEntry mdcEntry = LoggingProtos.MapEntry.newBuilder()
-            .setKey("REMOTE_IP")
-            .setValue("10.3.3.5")
-            .build();
-
-
-    LoggingProtos.LoggingEvent event2 = LoggingProtos.LoggingEvent.newBuilder()
-        .setLevel(LoggingProtos.Level.INFO)
-        .setMessage("this is my message")
-        .setFormattedMessage("this is my formatted message")
-        .setLoggerContext(
-            LoggingProtos.LoggerContext.newBuilder()
-                .setName("default-context")
-                .setBirthTime(4565L))
-        .setLoggerName("com.example.foo.Bar")
-        .addMdc(mdcEntry)
-        .build();
-
-
-
-  }
+public class ProtoBufConvertor {
 
   private LoggingProtos.Level convert(Level level) {
     if (level == Level.DEBUG) {
@@ -62,22 +30,24 @@ public class Test {
       return LoggingProtos.Level.TRACE;
     }
     // this should not happen
-    return LoggingProtos.Level.ERROR;  
+    return LoggingProtos.Level.ERROR;
 
   }
 
   private LoggingProtos.LoggerContext convert(LoggerContextVO lc) {
-    return LoggingProtos.LoggerContext
-        .newBuilder()
+    LoggingProtos.LoggerContext.Builder builder = LoggingProtos.LoggerContext.newBuilder();
+    if (lc.getName() != null) {
+      builder.setName(lc.getName());
+    }
+    return builder
         .setBirthTime(lc.getBirthTime())
-        .setName(lc.getName())
         .addAllProperties(convert(lc.getPropertyMap()))
         .build();
   }
 
   private List<LoggingProtos.MapEntry> convert(Map<String,String> map) {
     List<LoggingProtos.MapEntry> list = new ArrayList<LoggingProtos.MapEntry>(map.size());
-    for (LoggingProtos.MapEntry entry : list) {
+    for (Map.Entry<String, String> entry : map.entrySet()) {
       list.add(LoggingProtos.MapEntry
           .newBuilder()
           .setKey(entry.getKey())
@@ -107,23 +77,44 @@ public class Test {
           .setLineNumber(callerData.getLineNumber())
           .setMethodName(callerData.getMethodName())
           .build();
-      builder.addCallerData(data);  
+      builder.addCallerData(data);
     }
     builder.setLoggerContext(convert(event.getLoggerContextVO()));
-    builder.addAllMdc(convert(event.getMDCPropertyMap()));
-    builder.setMarker(convert(event.getMarker()));
-
-
-    event.getThrowableProxy()
-
-    builder.setThrowable();
-
+    if (event.getMDCPropertyMap() != null) {
+      builder.addAllMdc(convert(event.getMDCPropertyMap()));
+    }
+    if (event.getMarker() != null) {
+      builder.setMarker(convert(event.getMarker()));
+    }
+    if (event.getThrowableProxy() != null) {
+      builder.setThrowable(convert(event.getThrowableProxy()));
+    }
     return builder.build();
   }
 
   private LoggingProtos.Throwable convert(IThrowableProxy proxy) {
     LoggingProtos.Throwable.Builder builder = LoggingProtos.Throwable.newBuilder();
-    builder.setMessage();
+    builder
+        .setMessage(proxy.getMessage())
+        .setClassName(proxy.getClassName())
+        .setCommonFrames(proxy.getCommonFrames());
+    if (proxy.getCause() != null) {
+      builder.setCause(convert(proxy.getCause()));
+    }
+    for (StackTraceElementProxy steProxy : proxy.getStackTraceElementProxyArray()) {
+      builder.addStackTraceElements(convert(steProxy.getStackTraceElement()));
+    }
+    return builder.build();
+  }
+
+  private LoggingProtos.StackTraceElement convert(StackTraceElement ste) {
+    return LoggingProtos.StackTraceElement
+        .newBuilder()
+        .setDeclaringClass(ste.getClassName())
+        .setFileName(ste.getFileName())
+        .setLineNumber(ste.getLineNumber())
+        .setMethodName(ste.getMethodName())
+        .build();
   }
 
   private LoggingProtos.Marker convert(org.slf4j.Marker marker) {
@@ -136,24 +127,4 @@ public class Test {
     return builder.build();
   }
 
-  private static class Person {
-    private String firstName;
-    private String lastName;
-    private int age;
-
-    private Person(String firstName, String lastName, int age) {
-      this.firstName = firstName;
-      this.lastName = lastName;
-      this.age = age;
-    }
-
-    @Override
-    public String toString() {
-      return "Person{" +
-          "firstName='" + firstName + '\'' +
-          ", lastName='" + lastName + '\'' +
-          ", age=" + age +
-          '}';
-    }
-  }
 }
