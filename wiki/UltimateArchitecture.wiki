@@ -2,6 +2,8 @@
 
 This is what I currently consider the ultimate logging architecture.
 
+http://code.google.com/p/firewood/source/browse/trunk/logback-dream.png
+
 = Details =
 
   * all applications use an asynchronous appender to send their events to the LogServer
