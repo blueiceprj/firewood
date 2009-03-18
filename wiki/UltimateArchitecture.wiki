@@ -2,7 +2,7 @@
 
 This is what I currently consider the ultimate logging architecture.
 
-http://code.google.com/p/firewood/source/browse/trunk/logback-dream.png
+http://firewood.googlecode.com/svn/trunk/logback-dream.png
 
 = Details =
 
