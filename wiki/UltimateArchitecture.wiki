@@ -1,5 +1,3 @@
-#Ultimate Logging Architecture
-
 = Intro =
 
 This is what I currently consider the ultimate logging architecture.
