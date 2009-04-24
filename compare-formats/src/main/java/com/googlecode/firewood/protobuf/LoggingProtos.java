@@ -177,6 +177,125 @@ public final class LoggingProtos {
     public boolean hasLoggerContext() { return hasLoggerContext; }
     public com.googlecode.firewood.protobuf.LoggingProtos.LoggerContext getLoggerContext() { return loggerContext_; }
     
+    @Override
+    public final boolean isInitialized() {
+      for (com.googlecode.firewood.protobuf.LoggingProtos.MapEntry element : getMdcList()) {
+        if (!element.isInitialized()) return false;
+      }
+      if (hasThrowable()) {
+        if (!getThrowable().isInitialized()) return false;
+      }
+      if (hasMarker()) {
+        if (!getMarker().isInitialized()) return false;
+      }
+      if (hasLoggerContext()) {
+        if (!getLoggerContext().isInitialized()) return false;
+      }
+      return true;
+    }
+    
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hasThreadName()) {
+        output.writeString(1, getThreadName());
+      }
+      if (hasLevel()) {
+        output.writeEnum(2, getLevel().getNumber());
+      }
+      if (hasMessage()) {
+        output.writeString(3, getMessage());
+      }
+      for (java.lang.String element : getArgumentsList()) {
+        output.writeString(4, element);
+      }
+      if (hasFormattedMessage()) {
+        output.writeString(5, getFormattedMessage());
+      }
+      if (hasLoggerName()) {
+        output.writeString(6, getLoggerName());
+      }
+      for (com.googlecode.firewood.protobuf.LoggingProtos.CallerData element : getCallerDataList()) {
+        output.writeMessage(7, element);
+      }
+      for (com.googlecode.firewood.protobuf.LoggingProtos.MapEntry element : getMdcList()) {
+        output.writeMessage(8, element);
+      }
+      if (hasTimestamp()) {
+        output.writeInt64(9, getTimestamp());
+      }
+      if (hasThrowable()) {
+        output.writeMessage(10, getThrowable());
+      }
+      if (hasMarker()) {
+        output.writeMessage(11, getMarker());
+      }
+      if (hasLoggerContext()) {
+        output.writeMessage(12, getLoggerContext());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (hasThreadName()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getThreadName());
+      }
+      if (hasLevel()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, getLevel().getNumber());
+      }
+      if (hasMessage()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(3, getMessage());
+      }
+      for (java.lang.String element : getArgumentsList()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(4, element);
+      }
+      if (hasFormattedMessage()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(5, getFormattedMessage());
+      }
+      if (hasLoggerName()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(6, getLoggerName());
+      }
+      for (com.googlecode.firewood.protobuf.LoggingProtos.CallerData element : getCallerDataList()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, element);
+      }
+      for (com.googlecode.firewood.protobuf.LoggingProtos.MapEntry element : getMdcList()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, element);
+      }
+      if (hasTimestamp()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(9, getTimestamp());
+      }
+      if (hasThrowable()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getThrowable());
+      }
+      if (hasMarker()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getMarker());
+      }
+      if (hasLoggerContext()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getLoggerContext());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
     public static com.googlecode.firewood.protobuf.LoggingProtos.LoggingEvent parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -296,6 +415,174 @@ public final class LoggingProtos {
         com.googlecode.firewood.protobuf.LoggingProtos.LoggingEvent returnMe = result;
         result = null;
         return returnMe;
+      }
+      
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.googlecode.firewood.protobuf.LoggingProtos.LoggingEvent) {
+          return mergeFrom((com.googlecode.firewood.protobuf.LoggingProtos.LoggingEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.googlecode.firewood.protobuf.LoggingProtos.LoggingEvent other) {
+        if (other == com.googlecode.firewood.protobuf.LoggingProtos.LoggingEvent.getDefaultInstance()) return this;
+        if (other.hasThreadName()) {
+          setThreadName(other.getThreadName());
+        }
+        if (other.hasLevel()) {
+          setLevel(other.getLevel());
+        }
+        if (other.hasMessage()) {
+          setMessage(other.getMessage());
+        }
+        if (!other.arguments_.isEmpty()) {
+          if (result.arguments_.isEmpty()) {
+            result.arguments_ = new java.util.ArrayList<java.lang.String>();
+          }
+          result.arguments_.addAll(other.arguments_);
+        }
+        if (other.hasFormattedMessage()) {
+          setFormattedMessage(other.getFormattedMessage());
+        }
+        if (other.hasLoggerName()) {
+          setLoggerName(other.getLoggerName());
+        }
+        if (!other.callerData_.isEmpty()) {
+          if (result.callerData_.isEmpty()) {
+            result.callerData_ = new java.util.ArrayList<com.googlecode.firewood.protobuf.LoggingProtos.CallerData>();
+          }
+          result.callerData_.addAll(other.callerData_);
+        }
+        if (!other.mdc_.isEmpty()) {
+          if (result.mdc_.isEmpty()) {
+            result.mdc_ = new java.util.ArrayList<com.googlecode.firewood.protobuf.LoggingProtos.MapEntry>();
+          }
+          result.mdc_.addAll(other.mdc_);
+        }
+        if (other.hasTimestamp()) {
+          setTimestamp(other.getTimestamp());
+        }
+        if (other.hasThrowable()) {
+          mergeThrowable(other.getThrowable());
+        }
+        if (other.hasMarker()) {
+          mergeMarker(other.getMarker());
+        }
+        if (other.hasLoggerContext()) {
+          mergeLoggerContext(other.getLoggerContext());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return mergeFrom(input,
+          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistry extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              setThreadName(input.readString());
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+              com.googlecode.firewood.protobuf.LoggingProtos.Level value = com.googlecode.firewood.protobuf.LoggingProtos.Level.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(2, rawValue);
+              } else {
+                setLevel(value);
+              }
+              break;
+            }
+            case 26: {
+              setMessage(input.readString());
+              break;
+            }
+            case 34: {
+              addArguments(input.readString());
+              break;
+            }
+            case 42: {
+              setFormattedMessage(input.readString());
+              break;
+            }
+            case 50: {
+              setLoggerName(input.readString());
+              break;
+            }
+            case 58: {
+              com.googlecode.firewood.protobuf.LoggingProtos.CallerData.Builder subBuilder = com.googlecode.firewood.protobuf.LoggingProtos.CallerData.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addCallerData(subBuilder.buildPartial());
+              break;
+            }
+            case 66: {
+              com.googlecode.firewood.protobuf.LoggingProtos.MapEntry.Builder subBuilder = com.googlecode.firewood.protobuf.LoggingProtos.MapEntry.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addMdc(subBuilder.buildPartial());
+              break;
+            }
+            case 72: {
+              setTimestamp(input.readInt64());
+              break;
+            }
+            case 82: {
+              com.googlecode.firewood.protobuf.LoggingProtos.Throwable.Builder subBuilder = com.googlecode.firewood.protobuf.LoggingProtos.Throwable.newBuilder();
+              if (hasThrowable()) {
+                subBuilder.mergeFrom(getThrowable());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setThrowable(subBuilder.buildPartial());
+              break;
+            }
+            case 90: {
+              com.googlecode.firewood.protobuf.LoggingProtos.Marker.Builder subBuilder = com.googlecode.firewood.protobuf.LoggingProtos.Marker.newBuilder();
+              if (hasMarker()) {
+                subBuilder.mergeFrom(getMarker());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setMarker(subBuilder.buildPartial());
+              break;
+            }
+            case 98: {
+              com.googlecode.firewood.protobuf.LoggingProtos.LoggerContext.Builder subBuilder = com.googlecode.firewood.protobuf.LoggingProtos.LoggerContext.newBuilder();
+              if (hasLoggerContext()) {
+                subBuilder.mergeFrom(getLoggerContext());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setLoggerContext(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
       }
       
       
@@ -688,6 +975,57 @@ public final class LoggingProtos {
     public boolean hasLineNumber() { return hasLineNumber; }
     public int getLineNumber() { return lineNumber_; }
     
+    @Override
+    public final boolean isInitialized() {
+      return true;
+    }
+    
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hasFileName()) {
+        output.writeString(1, getFileName());
+      }
+      if (hasClassName()) {
+        output.writeString(2, getClassName());
+      }
+      if (hasMethodName()) {
+        output.writeString(3, getMethodName());
+      }
+      if (hasLineNumber()) {
+        output.writeInt32(4, getLineNumber());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (hasFileName()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getFileName());
+      }
+      if (hasClassName()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(2, getClassName());
+      }
+      if (hasMethodName()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(3, getMethodName());
+      }
+      if (hasLineNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, getLineNumber());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
     public static com.googlecode.firewood.protobuf.LoggingProtos.CallerData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -795,6 +1133,84 @@ public final class LoggingProtos {
         com.googlecode.firewood.protobuf.LoggingProtos.CallerData returnMe = result;
         result = null;
         return returnMe;
+      }
+      
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.googlecode.firewood.protobuf.LoggingProtos.CallerData) {
+          return mergeFrom((com.googlecode.firewood.protobuf.LoggingProtos.CallerData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.googlecode.firewood.protobuf.LoggingProtos.CallerData other) {
+        if (other == com.googlecode.firewood.protobuf.LoggingProtos.CallerData.getDefaultInstance()) return this;
+        if (other.hasFileName()) {
+          setFileName(other.getFileName());
+        }
+        if (other.hasClassName()) {
+          setClassName(other.getClassName());
+        }
+        if (other.hasMethodName()) {
+          setMethodName(other.getMethodName());
+        }
+        if (other.hasLineNumber()) {
+          setLineNumber(other.getLineNumber());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return mergeFrom(input,
+          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistry extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              setFileName(input.readString());
+              break;
+            }
+            case 18: {
+              setClassName(input.readString());
+              break;
+            }
+            case 26: {
+              setMethodName(input.readString());
+              break;
+            }
+            case 32: {
+              setLineNumber(input.readInt32());
+              break;
+            }
+          }
+        }
       }
       
       
@@ -913,6 +1329,44 @@ public final class LoggingProtos {
     public boolean hasValue() { return hasValue; }
     public java.lang.String getValue() { return value_; }
     
+    @Override
+    public final boolean isInitialized() {
+      if (!hasKey) return false;
+      return true;
+    }
+    
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hasKey()) {
+        output.writeString(1, getKey());
+      }
+      if (hasValue()) {
+        output.writeString(2, getValue());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (hasKey()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getKey());
+      }
+      if (hasValue()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(2, getValue());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
     public static com.googlecode.firewood.protobuf.LoggingProtos.MapEntry parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1022,6 +1476,70 @@ public final class LoggingProtos {
         return returnMe;
       }
       
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.googlecode.firewood.protobuf.LoggingProtos.MapEntry) {
+          return mergeFrom((com.googlecode.firewood.protobuf.LoggingProtos.MapEntry)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.googlecode.firewood.protobuf.LoggingProtos.MapEntry other) {
+        if (other == com.googlecode.firewood.protobuf.LoggingProtos.MapEntry.getDefaultInstance()) return this;
+        if (other.hasKey()) {
+          setKey(other.getKey());
+        }
+        if (other.hasValue()) {
+          setValue(other.getValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return mergeFrom(input,
+          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistry extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              setKey(input.readString());
+              break;
+            }
+            case 18: {
+              setValue(input.readString());
+              break;
+            }
+          }
+        }
+      }
+      
       
       // required string key = 1;
       public boolean hasKey() {
@@ -1124,6 +1642,70 @@ public final class LoggingProtos {
     private com.googlecode.firewood.protobuf.LoggingProtos.Throwable cause_ = com.googlecode.firewood.protobuf.LoggingProtos.Throwable.getDefaultInstance();
     public boolean hasCause() { return hasCause; }
     public com.googlecode.firewood.protobuf.LoggingProtos.Throwable getCause() { return cause_; }
+    
+    @Override
+    public final boolean isInitialized() {
+      for (com.googlecode.firewood.protobuf.LoggingProtos.StackTraceElement element : getStackTraceElementsList()) {
+        if (!element.isInitialized()) return false;
+      }
+      if (hasCause()) {
+        if (!getCause().isInitialized()) return false;
+      }
+      return true;
+    }
+    
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hasMessage()) {
+        output.writeString(1, getMessage());
+      }
+      if (hasClassName()) {
+        output.writeString(2, getClassName());
+      }
+      for (com.googlecode.firewood.protobuf.LoggingProtos.StackTraceElement element : getStackTraceElementsList()) {
+        output.writeMessage(3, element);
+      }
+      if (hasCommonFrames()) {
+        output.writeInt32(4, getCommonFrames());
+      }
+      if (hasCause()) {
+        output.writeMessage(5, getCause());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (hasMessage()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getMessage());
+      }
+      if (hasClassName()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(2, getClassName());
+      }
+      for (com.googlecode.firewood.protobuf.LoggingProtos.StackTraceElement element : getStackTraceElementsList()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, element);
+      }
+      if (hasCommonFrames()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, getCommonFrames());
+      }
+      if (hasCause()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getCause());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
     
     public static com.googlecode.firewood.protobuf.LoggingProtos.Throwable parseFrom(
         com.google.protobuf.ByteString data)
@@ -1236,6 +1818,101 @@ public final class LoggingProtos {
         com.googlecode.firewood.protobuf.LoggingProtos.Throwable returnMe = result;
         result = null;
         return returnMe;
+      }
+      
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.googlecode.firewood.protobuf.LoggingProtos.Throwable) {
+          return mergeFrom((com.googlecode.firewood.protobuf.LoggingProtos.Throwable)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.googlecode.firewood.protobuf.LoggingProtos.Throwable other) {
+        if (other == com.googlecode.firewood.protobuf.LoggingProtos.Throwable.getDefaultInstance()) return this;
+        if (other.hasMessage()) {
+          setMessage(other.getMessage());
+        }
+        if (other.hasClassName()) {
+          setClassName(other.getClassName());
+        }
+        if (!other.stackTraceElements_.isEmpty()) {
+          if (result.stackTraceElements_.isEmpty()) {
+            result.stackTraceElements_ = new java.util.ArrayList<com.googlecode.firewood.protobuf.LoggingProtos.StackTraceElement>();
+          }
+          result.stackTraceElements_.addAll(other.stackTraceElements_);
+        }
+        if (other.hasCommonFrames()) {
+          setCommonFrames(other.getCommonFrames());
+        }
+        if (other.hasCause()) {
+          mergeCause(other.getCause());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return mergeFrom(input,
+          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistry extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              setMessage(input.readString());
+              break;
+            }
+            case 18: {
+              setClassName(input.readString());
+              break;
+            }
+            case 26: {
+              com.googlecode.firewood.protobuf.LoggingProtos.StackTraceElement.Builder subBuilder = com.googlecode.firewood.protobuf.LoggingProtos.StackTraceElement.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addStackTraceElements(subBuilder.buildPartial());
+              break;
+            }
+            case 32: {
+              setCommonFrames(input.readInt32());
+              break;
+            }
+            case 42: {
+              com.googlecode.firewood.protobuf.LoggingProtos.Throwable.Builder subBuilder = com.googlecode.firewood.protobuf.LoggingProtos.Throwable.newBuilder();
+              if (hasCause()) {
+                subBuilder.mergeFrom(getCause());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setCause(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
       }
       
       
@@ -1427,6 +2104,59 @@ public final class LoggingProtos {
     public boolean hasLineNumber() { return hasLineNumber; }
     public int getLineNumber() { return lineNumber_; }
     
+    @Override
+    public final boolean isInitialized() {
+      if (!hasDeclaringClass) return false;
+      if (!hasMethodName) return false;
+      return true;
+    }
+    
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hasDeclaringClass()) {
+        output.writeString(1, getDeclaringClass());
+      }
+      if (hasMethodName()) {
+        output.writeString(2, getMethodName());
+      }
+      if (hasFileName()) {
+        output.writeString(3, getFileName());
+      }
+      if (hasLineNumber()) {
+        output.writeInt32(4, getLineNumber());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (hasDeclaringClass()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getDeclaringClass());
+      }
+      if (hasMethodName()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(2, getMethodName());
+      }
+      if (hasFileName()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(3, getFileName());
+      }
+      if (hasLineNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, getLineNumber());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
     public static com.googlecode.firewood.protobuf.LoggingProtos.StackTraceElement parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1534,6 +2264,84 @@ public final class LoggingProtos {
         com.googlecode.firewood.protobuf.LoggingProtos.StackTraceElement returnMe = result;
         result = null;
         return returnMe;
+      }
+      
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.googlecode.firewood.protobuf.LoggingProtos.StackTraceElement) {
+          return mergeFrom((com.googlecode.firewood.protobuf.LoggingProtos.StackTraceElement)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.googlecode.firewood.protobuf.LoggingProtos.StackTraceElement other) {
+        if (other == com.googlecode.firewood.protobuf.LoggingProtos.StackTraceElement.getDefaultInstance()) return this;
+        if (other.hasDeclaringClass()) {
+          setDeclaringClass(other.getDeclaringClass());
+        }
+        if (other.hasMethodName()) {
+          setMethodName(other.getMethodName());
+        }
+        if (other.hasFileName()) {
+          setFileName(other.getFileName());
+        }
+        if (other.hasLineNumber()) {
+          setLineNumber(other.getLineNumber());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return mergeFrom(input,
+          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistry extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              setDeclaringClass(input.readString());
+              break;
+            }
+            case 18: {
+              setMethodName(input.readString());
+              break;
+            }
+            case 26: {
+              setFileName(input.readString());
+              break;
+            }
+            case 32: {
+              setLineNumber(input.readInt32());
+              break;
+            }
+          }
+        }
       }
       
       
@@ -1657,6 +2465,47 @@ public final class LoggingProtos {
       return marker_.get(index);
     }
     
+    @Override
+    public final boolean isInitialized() {
+      if (!hasName) return false;
+      for (com.googlecode.firewood.protobuf.LoggingProtos.Marker element : getMarkerList()) {
+        if (!element.isInitialized()) return false;
+      }
+      return true;
+    }
+    
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hasName()) {
+        output.writeString(1, getName());
+      }
+      for (com.googlecode.firewood.protobuf.LoggingProtos.Marker element : getMarkerList()) {
+        output.writeMessage(2, element);
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (hasName()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getName());
+      }
+      for (com.googlecode.firewood.protobuf.LoggingProtos.Marker element : getMarkerList()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, element);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
     public static com.googlecode.firewood.protobuf.LoggingProtos.Marker parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1768,6 +2617,75 @@ public final class LoggingProtos {
         com.googlecode.firewood.protobuf.LoggingProtos.Marker returnMe = result;
         result = null;
         return returnMe;
+      }
+      
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.googlecode.firewood.protobuf.LoggingProtos.Marker) {
+          return mergeFrom((com.googlecode.firewood.protobuf.LoggingProtos.Marker)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.googlecode.firewood.protobuf.LoggingProtos.Marker other) {
+        if (other == com.googlecode.firewood.protobuf.LoggingProtos.Marker.getDefaultInstance()) return this;
+        if (other.hasName()) {
+          setName(other.getName());
+        }
+        if (!other.marker_.isEmpty()) {
+          if (result.marker_.isEmpty()) {
+            result.marker_ = new java.util.ArrayList<com.googlecode.firewood.protobuf.LoggingProtos.Marker>();
+          }
+          result.marker_.addAll(other.marker_);
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return mergeFrom(input,
+          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistry extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              setName(input.readString());
+              break;
+            }
+            case 18: {
+              com.googlecode.firewood.protobuf.LoggingProtos.Marker.Builder subBuilder = com.googlecode.firewood.protobuf.LoggingProtos.Marker.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addMarker(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
       }
       
       
@@ -1888,6 +2806,54 @@ public final class LoggingProtos {
     public boolean hasBirthTime() { return hasBirthTime; }
     public long getBirthTime() { return birthTime_; }
     
+    @Override
+    public final boolean isInitialized() {
+      if (!hasBirthTime) return false;
+      for (com.googlecode.firewood.protobuf.LoggingProtos.MapEntry element : getPropertiesList()) {
+        if (!element.isInitialized()) return false;
+      }
+      return true;
+    }
+    
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (hasName()) {
+        output.writeString(1, getName());
+      }
+      for (com.googlecode.firewood.protobuf.LoggingProtos.MapEntry element : getPropertiesList()) {
+        output.writeMessage(2, element);
+      }
+      if (hasBirthTime()) {
+        output.writeInt64(3, getBirthTime());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (hasName()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeStringSize(1, getName());
+      }
+      for (com.googlecode.firewood.protobuf.LoggingProtos.MapEntry element : getPropertiesList()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, element);
+      }
+      if (hasBirthTime()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, getBirthTime());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
     public static com.googlecode.firewood.protobuf.LoggingProtos.LoggerContext parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1999,6 +2965,82 @@ public final class LoggingProtos {
         com.googlecode.firewood.protobuf.LoggingProtos.LoggerContext returnMe = result;
         result = null;
         return returnMe;
+      }
+      
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.googlecode.firewood.protobuf.LoggingProtos.LoggerContext) {
+          return mergeFrom((com.googlecode.firewood.protobuf.LoggingProtos.LoggerContext)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.googlecode.firewood.protobuf.LoggingProtos.LoggerContext other) {
+        if (other == com.googlecode.firewood.protobuf.LoggingProtos.LoggerContext.getDefaultInstance()) return this;
+        if (other.hasName()) {
+          setName(other.getName());
+        }
+        if (!other.properties_.isEmpty()) {
+          if (result.properties_.isEmpty()) {
+            result.properties_ = new java.util.ArrayList<com.googlecode.firewood.protobuf.LoggingProtos.MapEntry>();
+          }
+          result.properties_.addAll(other.properties_);
+        }
+        if (other.hasBirthTime()) {
+          setBirthTime(other.getBirthTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return mergeFrom(input,
+          com.google.protobuf.ExtensionRegistry.getEmptyRegistry());
+      }
+      
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistry extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              setName(input.readString());
+              break;
+            }
+            case 18: {
+              com.googlecode.firewood.protobuf.LoggingProtos.MapEntry.Builder subBuilder = com.googlecode.firewood.protobuf.LoggingProtos.MapEntry.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addProperties(subBuilder.buildPartial());
+              break;
+            }
+            case 24: {
+              setBirthTime(input.readInt64());
+              break;
+            }
+          }
+        }
       }
       
       
@@ -2165,8 +3207,9 @@ public final class LoggingProtos {
       "\001(\t\022>\n\nproperties\030\002 \003(\0132*.com.googlecode" +
       ".firewood.protobuf.MapEntry\022\021\n\tbirthTime" +
       "\030\003 \002(\003*<\n\005Level\022\t\n\005ERROR\020\004\022\010\n\004WARN\020\003\022\010\n\004" +
-      "INFO\020\002\022\t\n\005DEBUG\020\001\022\t\n\005TRACE\020\000B1\n com.goog" +
-      "lecode.firewood.protobufB\rLoggingProtos";
+      "INFO\020\002\022\t\n\005DEBUG\020\001\022\t\n\005TRACE\020\000B3\n com.goog" +
+      "lecode.firewood.protobufB\rLoggingProtosH" +
+      "\001";
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
