@@ -2,6 +2,8 @@ package com.googlecode.firewood.protobuf;
 
 option java_package = "com.googlecode.firewood.protobuf";
 option java_outer_classname = "LoggingProtos";
+option optimize_for = SPEED;
+
 
 message LoggingEvent {
   optional string threadName = 1;

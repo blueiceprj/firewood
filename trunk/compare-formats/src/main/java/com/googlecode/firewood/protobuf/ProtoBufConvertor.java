@@ -66,8 +66,10 @@ public class ProtoBufConvertor {
     builder.setThreadName(event.getThreadName());
     builder.setTimestamp(event.getTimeStamp());
 
-    for (Object arg : event.getArgumentArray()) {
-      builder.addArguments(arg == null ? "null" : arg.toString());
+    if (event.getArgumentArray() != null) {
+      for (Object arg : event.getArgumentArray()) {
+        builder.addArguments(arg == null ? "null" : arg.toString());
+      }      
     }
 
     for (CallerData callerData : event.getCallerData()) {
