@@ -1,13 +1,26 @@
-<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
-<idea-plugin>
+<idea-plugin version="2">
   <name>JumpToCode</name>
-  <description>allows external programs to make IDEA jump to specififed java code</description>
-  <version>0.5</version>
+  <description>allows other programs to make IDEA jump to specififed java code</description>
+  <version>0.7</version>
   <vendor>MaartenBosteels</vendor>
-  <idea-version since-build="7364"/>
+  <idea-version since-build="8000"/>
+
   <application-components>
     <component>
-      <implementation-class>com.googlecode.firewood.plugins.intellij.JumpToCode.logic.JumpToCodeApplicationComponent</implementation-class>
+      <implementation-class>com.googlecode.firewood.plugins.intellij.JumpToCode.logic.JumpToCodeApplicationComponent
+      </implementation-class>
     </component>
   </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
 </idea-plugin>
