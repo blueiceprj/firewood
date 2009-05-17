@@ -7,10 +7,8 @@ The !JumpToCode plugin waits for requests from external programs to jump to a sp
 The idea is that log-file viewers like Chainsaw and Vigilog interact with this plugin.
 When viewing a log-entry or stacktrace in Vigilog, users can click on a location and make IDEA jump to the corresponding location in the source code.
 
-I have submitted a working patch for Vigilog.
-You can find a patched version of Vigilog here: http://vigilog.sourceforge.net/staging/
-
-(Unfortunately this version is using an older version of JIDE and it might not work under linux: it's working on my CentOS box, but not on my Fedora 8 machine).
+Current version of Vigilog (1.3.1) can communicate with IDEA via this  plugin.
+see http://vigilog.sourceforge.net/
 
 http://firewood.googlecode.com/svn/trunk/plugins/idea/JumpToCode/screenshots/vigilog-jumptocode.jpg
 
